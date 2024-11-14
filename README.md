@@ -20,4 +20,6 @@ To launch the application run the following command
 npm run start
 ```
 
-The application part runs on **localhost:5173**
+The client part runs on **localhost:5173**
+
+The server part runs on **localhost:3000**

@@ -26,7 +26,7 @@ const Home = () => {
     try {
       dispatch(requestStart());
 
-      const res = await fetch(`http://localhost:3000/getAll`);
+      const res = await fetch(`http://localhost:3000/data/all`);
       const data = await res.json();
 
       if (data.success === false) {
@@ -47,7 +47,7 @@ const Home = () => {
     try {
       dispatch(requestStart());
 
-      const res = await fetch(`http://localhost:3000/getUpdated?time=${int}`);
+      const res = await fetch(`http://localhost:3000/data/updated?time=${int}`);
       const data = await res.json();
 
       if (data.success === false) {
@@ -68,7 +68,7 @@ const Home = () => {
     try {
       dispatch(changingStart());
 
-      const res = await fetch('http://localhost:3000/changeRandom', {
+      const res = await fetch('http://localhost:3000/data/random', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ const Home = () => {
                 onClick={handleChange}
                 disabled={changing}
               >
-                {changing ? "Loading..." : "Change one random string"}
+                {changing ? "Loading..." : "Change one random row"}
               </button>
               <div className="home-page__info">
                 <p>Changes are checked every {readableInt}. { lastCheck && `Last time checked: ${new Date(lastCheck).toLocaleString()}` }</p>

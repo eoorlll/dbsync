@@ -11,9 +11,9 @@ app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
 });
 
-app.get('/getAll', getAll);
-app.get('/getUpdated', getUpdated);
-app.patch('/changeRandom', changeRandom);
+app.get('/data/all', getAll);
+app.get('/data/updated', getUpdated);
+app.patch('/data/random', changeRandom);
 
 app.get('/', (req, res) => {
     res.send('Hello World');
